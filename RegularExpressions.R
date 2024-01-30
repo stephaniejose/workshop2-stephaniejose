@@ -31,4 +31,27 @@ any_letter
 special <- grep(pattern = 'a.e', x = sentence)
 sentence[special]
 
+#quantifiers allow you to specify how many of a character (or set of characters) grep() is matching to
+#'?' denotes 0 or 1 instances 
+#'*'denotes 0 or more instances 
+#'+' denotes 1 or more instances 
+
+#the '.' shows that there is a character in between, '?' means that there is either 0 or 1 characters in the middle
+sentence[grep(pattern = 'e.?e', x = sentence)]
+
+sentence[grep(pattern = 'e.*e', x = sentence)]
+
+sentence[grep(pattern = 'e.+e', x = sentence)]
+
+#gsub() can be used to search for text but it substitutes the matched text with the text of our choosing
+gsub_out <- gsub(pattern = 'a.e', x = sentence, replacement = '!!!')
+gsub_out
+
+#this replaces all the 't's' with '???'
+t_replacement <- gsub(pattern = 't', x = sentence, replacement = '???')
+t_replacement
+
+
+
+
 
