@@ -24,3 +24,9 @@ replacement_cop
 #(6) Another genus name has been misspelled - ‘Microcopis’ should be ‘Microcopris’. Fix this too
 replacement_micro <- gsub(pattern = 'Microcopis', x = dung_names, replacement = 'Microcopris')
 replacement_micro
+
+#(8) Now create a new gsub() command that replaces the one you used in question 5 and 6, so that it is flexible enough to fix both genus names in one go
+replacement_genus <- gsub('Copis', 'Copris',
+                          gsub('Microcopis','Microcopris', dung_names))
+replacement_genus
+
