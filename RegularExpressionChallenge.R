@@ -30,3 +30,17 @@ replacement_genus <- gsub('Copis', 'Copris',
                           gsub('Microcopis','Microcopris', dung_names))
 replacement_genus
 
+#this is an example of how to incorporate data sets 
+tiny_df <- data.frame(c('steph','fahal','riya'), c('apple','banana','orange'))
+tiny_df
+
+#(9) Replace the column names in your data set with your corrected ones
+colnames(tiny_df) <- c('name','fruit')
+tiny_df
+colnames(dung_beetle) <- c(replacement_genus)
+dung_beetle
+
+#(10) Find all the species where the genus starts with an ‘O’ and the specific epithet ends in an ‘s’
+genus2 <- grep(pattern = 'O*_s', x = dung_names)
+genus2
+
